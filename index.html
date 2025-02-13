@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Fira+Code:wght@300..700&family=Lato&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>LovIu</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Sour Gummy", serif;
+            background-color: #F2F2F2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            overflow-y: auto;
+            color: #F25764;
+            flex-direction: column;
+           width: 100vw;
+           min-height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+           /* max-width: 1200px;*/
+            /* height: 100vh; */
+            overflow: hidden;
+            gap: 1rem;
+
+        }
+
+        .image-container img {
+            max-width: 250px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+            margin-bottom: 20px;
+            animation: floatImage 3s ease-in-out infinite alternate;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            font-size: 2rem;
+            font-family: "Fira Code", monospace;
+            color: #F2F2F2;
+            padding: 20px;
+            border-radius: 12px;
+            flex-wrap: wrap; 
+            gap: 10px; 
+        }
+
+        .time-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #F25757, #F2858E);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            min-width: 90px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            transition: background 0.3s ease;
+            margin: 5px;
+        }
+
+        .time-box:hover {
+            background: linear-gradient(135deg, #F2858E, #F25757);
+        }
+
+        .time-box span {
+            font-size: 1.2rem;
+            color: #F2F2F2;
+            text-transform: uppercase;
+        }
+
+        .time-box div {
+            font-size: 2.5rem;
+            color: #F2F2F2;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes floatImage {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-20px);
+            }
+        }
+
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(242, 133, 142, 0.3);
+            animation: float 10s infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-200px);
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .title {
+            font-size: 3rem;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            text-align: center;
+            margin-bottom: 20px;
+            word-break: keep-all; /* Evita que se partan las palabras */
+            white-space: normal; /* Permite que las palabras se rompan solo cuando sea necesario */
+            line-height: 1.2; /* Ayuda a evitar que las palabras se corten en móviles */
+            width: 80%;
+            
+        }
+
+        .title span {
+            opacity: 0;
+            animation: fadeInText 1s forwards;
+            background-image: linear-gradient(135deg, #F25757, #F2858E); /* Gradiente de las cajas del contador */
+            -webkit-background-clip: text; /* Aplica el gradiente solo al texto */
+            color: transparent; /* Necesario para que el color de fondo se vea en el texto */
+        }
+
+        @keyframes fadeInText {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Para que las letras se animen en secuencia */
+        .title span:nth-child(1) {
+            animation-delay: 0s;
+        }
+        .title span:nth-child(2) {
+            animation-delay: 1s;
+        }
+        .title span:nth-child(3) {
+            animation-delay: 2s;
+        }
+        .title span:nth-child(4) {
+            animation-delay: 3s;
+        }
+        .title span:nth-child(5) {
+            animation-delay: 4s;
+        }
+        .title span:nth-child(6) {
+            animation-delay: 5s;
+        }
+        .title span:nth-child(7) {
+            animation-delay: 6s;
+        }
+        .title span:nth-child(8) {
+            animation-delay: 7s;
+        }
+        .title span:nth-child(9) {
+            animation-delay: 8s;
+        }
+        .title span:nth-child(10) {
+            animation-delay: 9s;
+        }
+        .title span:nth-child(11) {
+            animation-delay: 10s;
+        }
+        .title span:nth-child(12) {
+            animation-delay: 11s;
+        }
+        .title span:nth-child(13) {
+            animation-delay: 12s;
+        }
+        .title span:nth-child(14) {
+            animation-delay: 13s;
+        }
+        .title span:nth-child(15) {
+            animation-delay: 14s;
+        }
+        .title span:nth-child(16) {
+            animation-delay: 15s;
+        }
+        .title span:nth-child(17) {
+            animation-delay: 16s;
+        }
+        .title span:nth-child(18) {
+            animation-delay: 17s;
+        }
+        .title span:nth-child(19) {
+            animation-delay: 18s;
+        }
+        .title span:nth-child(20) {
+            animation-delay: 19s;
+        }
+        .title span:nth-child(21) {
+            animation-delay: 20s;
+        }
+        .title span:nth-child(22) {
+            animation-delay: 21s;
+        }
+        .title span:nth-child(23) {
+            animation-delay: 22s;
+        }
+        .title span:nth-child(24) {
+            animation-delay: 23s;
+        }
+        .title span:nth-child(25) {
+            animation-delay: 24s;
+        }
+        .title span:nth-child(26) {
+            animation-delay: 25s;
+        }
+        .title span:nth-child(27) {
+            animation-delay: 26s;
+        }
+        .title span:nth-child(28) {
+            animation-delay: 27s;
+        }
+        .title span:nth-child(29) {
+            animation-delay: 28s;
+        }
+        .title span:nth-child(30) {
+            animation-delay: 29s;
+        }
+
+        /* Hacemos el título más pequeño en dispositivos móviles */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2rem; /* Reducir el tamaño del título */
+                flex-wrap: wrap;
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .title span {
+                font-size: 1.6rem;
+            }
+
+            .countdown {
+                font-size: 1.5rem;
+                gap: 10px;
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            .time-box {
+                min-width: 70px;
+                font-size: 1.4rem;
+                padding: 15px;
+            }
+
+            .time-box div {
+                font-size: 2rem;
+            }
+
+            .image-container img {
+                max-width: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title {
+                font-size: 1.6rem;
+            }
+
+            .title span {
+                font-size: 1.4rem;
+            }
+
+            .countdown {
+                font-size: 1.2rem;
+                gap: 5px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                flex-direction: row;
+            }
+
+            .time-box {
+                min-width: 60px;
+                font-size: 1.2rem;
+                padding: 10px;
+                width: 20%;
+            }
+
+            .time-box div {
+                font-size: 1.8rem;
+            }
+
+            .image-container img {
+                max-width: 180px;
+            }
+
+            .time-box span {
+                font-size: 0.8rem;
+                color: #F2F2F2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <span>E</span><span>l</span>
+            <span> </span>
+            <span>t</span><span>i</span><span>e</span><span>m</span><span>p</span><span>o</span>
+            <span> </span>
+            <span>q</span><span>u</span><span>e</span>
+            <span> </span>  <span> </span>
+            <span>t</span><span>e</span><span>n</span><span>e</span><span>m</span><span>o</span><span>s</span>
+            <span> </span>  <span> </span>
+            <span>j</span><span>u</span><span>n</span><span>t</span><span>o</span><span>s</span>
+        </div>
+
+        <div class="image-container">
+            <img src="giselle.jpg" alt="Imagen">
+        </div>
+
+        <div class="countdown" id="countdown">
+            <div class="time-box" id="days">
+                <div id="days-value">0</div>
+                <span>Días</span>
+            </div>
+            <div class="time-box" id="hours">
+                <div id="hours-value">0</div>
+                <span>Horas</span>
+            </div>
+            <div class="time-box" id="minutes">
+                <div id="minutes-value">0</div>
+                <span>Minutos</span>
+            </div>
+            <div class="time-box" id="seconds">
+                <div id="seconds-value">0</div>
+                <span>Segundos</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const startDate = new Date("December 13, 2024 23:00:00").getTime();
+
+        setInterval(function() {
+            const now = new Date().getTime();
+            const timeElapsed = now - startDate;
+
+            const days = Math.floor(timeElapsed / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeElapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeElapsed % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeElapsed % (1000 * 60)) / 1000);
+
+            document.getElementById("days-value").innerHTML = days;
+            document.getElementById("hours-value").innerHTML = hours;
+            document.getElementById("minutes-value").innerHTML = minutes;
+            document.getElementById("seconds-value").innerHTML = seconds;
+
+        }, 1000);
+
+        function createBubble() {
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+
+            const size = Math.random() * 50 + 20;
+            bubble.style.width = ${size}px;
+            bubble.style.height = ${size}px;
+            bubble.style.left = ${Math.random() * 100}%;
+            bubble.style.top = ${Math.random() * 100}%;
+
+            const duration = Math.random() * 5 + 5;
+            bubble.style.animationDuration = ${duration}s;
+
+            document.body.appendChild(bubble);
+
+            setTimeout(() => {
+                bubble.remove();
+            }, duration * 1000);
+        }
+
+        setInterval(createBubble, 500);
+    </script>
+</body>
+</html>
